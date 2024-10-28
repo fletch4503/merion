@@ -58,9 +58,9 @@ def demo_threading():
     # thread_posts.join()
 
     # 3
-    # with ThreadPoolExecutor() as executor:
-    #     executor.submit(get_users)
-    #     executor.submit(get_posts)
+    with ThreadPoolExecutor() as executor:
+        executor.submit(get_users)
+        executor.submit(get_posts)
 
     # 4
     # for user_id in range(1, 11):
@@ -108,8 +108,8 @@ def demo_multiprocessing():
 def main():
     configure_logging()
     logger.info("start main")
-    # demo_threading()
-    demo_multiprocessing()
+    demo_threading()
+    # demo_multiprocessing()
     logger.info("done main")
 
 
